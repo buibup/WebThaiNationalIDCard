@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebThaiNationalIDCard.Models.Person>
+@{
+    ViewBag.Title = "test";
+}
+
+<h2>test</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <span class="label label-default">Label</span>
+                    </div>
+                    <div class="row">
+                        <span class="label label-default">Label</span>
+                    </div>
+                    <div class="row">
+                        <span class="label label-default">Label</span>
+                    </div>
+                    <div class="row">
+                        <span class="label label-default">Label</span>
+                    </div>
+                    <div class="row">
+                        <span class="label label-default">Label</span>
+                    </div>
+                    <div class="row">
+                        <span class="label label-default">Label</span>
+                    </div>
+                </div>
+               
+                <div class="col-md-6">
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <div class="row">
+                                <span class="label label-default"> @item.id </span>
+                            </div>
+                            <div class="row">
+                                <span class="label label-default"> @item.Birthday </span>
+                            </div>
+                            <div class="row">
+                                <span class="label label-default"> @item.Sex</span>
+                            </div>
+                            <div class="row">
+                                <span class="label label-default"> @item.Th_Prefix </span>
+                            </div>
+                            <div class="row">
+                                <span class="label label-default"> @item.Th_Firstname </span>
+                            </div>
+                            <div class="row">
+                                <span class="label label-default"> @item.Th_Lastname</span>
+                            </div>
+                        }
+                    }
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            @using (Html.BeginForm("Read", "Home"))
+            {
+                <button class="btn btn-inverse" title="Log out" type="submit">Read</button>
+            }
+            @using (Html.BeginForm("LogOff", "Home"))
+            {
+                <button class="btn btn-inverse" title="Log out" type="submit">Read with photo</button>
+            }
+        </div>
+    </div>
+</div>
